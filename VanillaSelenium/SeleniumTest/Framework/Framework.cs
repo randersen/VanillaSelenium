@@ -10,7 +10,12 @@ namespace VanillaSelenium.Framework
 {
     public class FW
     {
-        private readonly IResultLogger logger;
+        private readonly MsUnitTestResultsLogger logger;
+
+        public FW(MsUnitTestResultsLogger resultLogger)
+        {
+            logger = resultLogger;
+        }
 
         public void Log(string msg, bool error)
         {
@@ -23,6 +28,7 @@ namespace VanillaSelenium.Framework
 
         public void FailTest(string msg)
         {
+            logger.Error(msg);
             Assert.Fail(msg);
         }
     }

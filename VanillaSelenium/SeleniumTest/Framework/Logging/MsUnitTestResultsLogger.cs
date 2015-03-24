@@ -24,7 +24,9 @@ namespace VanillaSelenium.Framework.Logging
         public void Error(string msg)
         {
             _testContext.WriteLine("Error: " + msg);
+            
         }
+
     }
 
 }
